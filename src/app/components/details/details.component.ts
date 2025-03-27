@@ -1,11 +1,29 @@
-import { Component } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewInit, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { DetailsMoviesComponent } from "../details-movies/details-movies.component";
+import { DetailsReviewsComponent } from "../details-reviews/details-reviews.component";
 
 @Component({
   selector: 'app-details',
-  imports: [],
+  imports: [DetailsMoviesComponent, DetailsReviewsComponent],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css'
 })
-export class DetailsComponent {
+export class DetailsComponent implements OnInit, OnChanges, AfterContentInit, AfterViewInit {
+  
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('ngOnChanges called');
+  }
+
+  ngOnInit(): void {
+    console.log('ngOnInit called');
+  }
+  
+  ngAfterContentInit(): void {
+    console.log('ngAfterContentInit called');
+  }
+
+  ngAfterViewInit(): void {
+    console.log('ngAfterViewInit called');
+  }
 
 }
